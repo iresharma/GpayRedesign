@@ -5,6 +5,8 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:math';
 
+import 'package:google_pay_redesign/Views/chatWindow.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -265,30 +267,46 @@ class _HomeScreenState extends State<HomeScreen> {
                           itemCount: name.length + 1,
                           itemBuilder: (context, index) {
                             if(index != 0) {
-                              return Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.all(10),
-                                    height: 40,
-                                    width: 40,
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: NetworkImage(photo[index - 1])
-                                        )
-                                    ),
-                                  ),
-                                  Text(
-                                    '${name[index - 1].split(' ')[0][0]} ${name[index - 1].split(' ')[1][0]}',
-                                    style: TextStyle(
-                                      fontFamily: 'ProductSans',
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.grey.shade800
-                                    ),
+                              return GestureDetector(
+                                onTap: () => Navigator.of(context).push(
+                                  new MaterialPageRoute(
+                                    builder: (_) => ChatWindow(
+                                      name: name[index - 1],
+                                      photo: photo[index - 1],
+                                    )
                                   )
-                                ],
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Hero(
+                                      tag: photo[index - 1],
+                                      child: Container(
+                                        margin: EdgeInsets.all(10),
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            image: DecorationImage(
+                                                fit: BoxFit.cover,
+                                                image: NetworkImage(photo[index - 1])
+                                            )
+                                        ),
+                                      ),
+                                    ),
+                                    Hero(
+                                      tag: name[index - 1],
+                                      child: Text(
+                                        '${name[index - 1].split(' ')[0][0]} ${name[index - 1].split(' ')[1][0]}',
+                                        style: TextStyle(
+                                          fontFamily: 'ProductSans',
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.grey.shade800
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               );
                             }
                             else {
