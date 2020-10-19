@@ -6,6 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'dart:math';
 
 import 'package:google_pay_redesign/Views/chatWindow.dart';
+import 'package:google_pay_redesign/Views/invitePage.dart';
+import 'package:google_pay_redesign/Views/transactions.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -20,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int _index = 0;
 
-  List<String> brand = ['spotify.com', 'flipkart.com', 'amazon.com', 'airtel.com', 'vistaprint.com', 'zomato.com', 'swiggycustomercarenumber.in', 'foodpanda.pk', 'uber.com', 'ubereats.com', 'jiosaavn.com', 'lenskart.com', 'coolwinks.com', 'apple.com', 'netflix.com'];
+  List<String> brand = ['spotify.com', 'flipkart.com', 'amazon.com', 'airtel.com', 'vistaprint.com', 'zomato.com', 'foodrenewed.com', 'foodpanda.pk', 'uber.com', 'ubereats.com', 'jiosaavn.com', 'lenskart.com', 'coolwinks.com', 'apple.com', 'netflix.com'];
 
   @override
   Widget build(BuildContext context) {
@@ -294,15 +296,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                       ),
                                     ),
-                                    Hero(
-                                      tag: name[index - 1],
-                                      child: Text(
-                                        '${name[index - 1].split(' ')[0][0]} ${name[index - 1].split(' ')[1][0]}',
-                                        style: TextStyle(
+                                    Text(
+                                      '${name[index - 1].split(' ')[0][0]} ${name[index - 1].split(' ')[1][0]}',
+                                      style: TextStyle(
                                           fontFamily: 'ProductSans',
                                           fontWeight: FontWeight.w700,
                                           color: Colors.grey.shade800
-                                        ),
                                       ),
                                     )
                                   ],
@@ -736,7 +735,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   ),
                                   Text(
-                                    brand[index] == 'swiggycustomercarenumber.in' ? 'Swiggy' : '${brand[index].split('.')[0]}',
+                                    '${brand[index].split('.')[0]}',
                                     style: TextStyle(
                                         fontFamily: 'ProductSans',
                                         fontWeight: FontWeight.w400,
@@ -887,6 +886,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Divider(),
                     ListTile(
+                      onTap: () => Navigator.of(context).push(
+                        new MaterialPageRoute(
+                          builder: (_) => TransactionPage()
+                        )
+                      ),
                       title: Text(
                         'ALL TRANSACTIONS',
                         style: TextStyle(
@@ -923,10 +927,52 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Colors.grey.shade700
                           ),
                         ),
+                        onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                          builder: (_) => InvitePage()
+                        )),
                         leading: Icon(FlutterIcons.heart_ant, color: Colors.black,),
                         subtitle: Text('Refer a friend and earn \$1.5'),
                         contentPadding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 16.0),
                         dense: true
+                    ),
+                    SizedBox(
+                      height: 13,
+                    ),
+                    Text(
+                      'Payments enabled by Google',
+                      style: TextStyle(
+                        fontFamily: 'ProductSans',
+                        fontSize: 15,
+                        color: Colors.grey
+                      ),
+                    ),
+                    Text(
+                      'Made by @Iresharma',
+                      style: TextStyle(
+                          fontFamily: 'ProductSans',
+                          fontSize: 10,
+                          color: Colors.grey
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(
+                          icon: Icon(FlutterIcons.github_fea),
+                          onPressed: () => print('github'),
+                          iconSize: 15,
+                        ),
+                        IconButton(
+                          icon: Icon(FlutterIcons.instagram_fea),
+                          onPressed: () => print('github'),
+                          iconSize: 15,
+                        ),
+                        IconButton(
+                          icon: Icon(FlutterIcons.linkedin_fea),
+                          onPressed: () => print('github'),
+                          iconSize: 15,
+                        )
+                      ],
                     )
                   ],
                 )

@@ -76,6 +76,8 @@ flutter:
         - asset: assets/fonts/Product-Sans-Bold-Italic.ttf
           style: italic
           weight: 700
+        - asset: assets/fonts/Product-Sans-Thin.ttf
+          weight: 200
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
