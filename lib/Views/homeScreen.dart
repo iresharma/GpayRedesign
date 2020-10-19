@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<String> name = ['Theodore Mason', 'Wendy Patterson', 'Julia Bourgeois', 'Panagiotis Veldhoen', 'Harold Fisher', 'Philip Olsen', 'Gustavo Cortes', 'Kitty Mckinney', 'Ömür Mertoğlu', 'Sadie Thompson', 'عرشيا گلشن', 'طاها نكو نظر', 'Hildegard Thomas', 'Josefina Moreno', 'Leevi Thomas'];
 
-  List<String> photo = ['https://randomuser.me/api/portraits/thumb/men/89.jpg', 'https://randomuser.me/api/portraits/thumb/women/87.jpg', 'https://randomuser.me/api/portraits/thumb/women/0.jpg', 'https://randomuser.me/api/portraits/thumb/men/77.jpg', 'https://randomuser.me/api/portraits/thumb/men/78.jpg', 'https://randomuser.me/api/portraits/thumb/men/37.jpg', 'https://randomuser.me/api/portraits/thumb/men/49.jpg', 'https://randomuser.me/api/portraits/thumb/women/9.jpg', 'https://randomuser.me/api/portraits/thumb/women/75.jpg', 'https://randomuser.me/api/portraits/thumb/women/42.jpg', 'https://randomuser.me/api/portraits/thumb/men/67.jpg', 'https://randomuser.me/api/portraits/thumb/men/21.jpg', 'https://randomuser.me/api/portraits/thumb/women/26.jpg', 'https://randomuser.me/api/portraits/thumb/women/5.jpg', 'https://randomuser.me/api/portraits/thumb/men/42.jpg'];
+  List<String> photo = List.generate(15, (index) => 'assets/images/${index + 1 > 8 ? index - 7 : index + 1}.jpg');
 
   int _index = 0;
 
@@ -282,7 +282,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Hero(
-                                      tag: photo[index - 1],
+                                      tag: name[index - 1],
                                       child: Container(
                                         margin: EdgeInsets.all(10),
                                         height: 40,
@@ -291,7 +291,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             shape: BoxShape.circle,
                                             image: DecorationImage(
                                                 fit: BoxFit.cover,
-                                                image: NetworkImage(photo[index - 1])
+                                                image: AssetImage(photo[index - 1])
                                             )
                                         ),
                                       ),
@@ -730,7 +730,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         shape: BoxShape.circle,
                                         image: DecorationImage(
                                             fit: BoxFit.contain,
-                                            image: NetworkImage('https://logo.clearbit.com/${brand[index]}')
+                                            image: AssetImage('assets/images/${brand[index]}.png')
                                         )
                                     ),
                                   ),

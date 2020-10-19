@@ -30,7 +30,7 @@ class _ChatWindowState extends State<ChatWindow> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Hero(tag: widget.photo,child: Container(
+            Hero(tag: widget.name,child: Container(
               margin: EdgeInsets.all(10),
               height: 30,
               width: 30,
@@ -38,7 +38,7 @@ class _ChatWindowState extends State<ChatWindow> {
                   shape: BoxShape.circle,
                   image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(widget.photo)
+                      image: AssetImage(widget.photo)
                   )
               ),
             )),

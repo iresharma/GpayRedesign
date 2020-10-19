@@ -32,7 +32,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 child: Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage(widget.photo),
+                      image: AssetImage(widget.photo),
                       fit: BoxFit.fill
                     ),
                     borderRadius: BorderRadius.circular(150),
@@ -94,7 +94,7 @@ class _PaymentPageState extends State<PaymentPage> {
                             shape: BoxShape.circle,
                             image: DecorationImage(
                                 fit: BoxFit.fitHeight,
-                                image: NetworkImage('http://logo.clearbit.com/kotak.com')
+                                image: AssetImage('assets/images/kotak.com.png')
                             )
                         ),
                       ),
