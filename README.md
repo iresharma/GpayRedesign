@@ -15,7 +15,7 @@ this design is inspired by [this dribble design](https://dribbble.com/shots/5312
 ### Home 
 | 1 | 2 | 3 |
 |---|---|---|
-| <img height="400px" src="./readmeFiles/Home1.jpg" /> | <img height="400px" src="./readmeFiles/Home2.jpg" /> | <img height="400px" src="./readmeFiles/Home3.jpg" /> |
+| <img height="400px" src="./readmeFiles/Home1.jpg" /> | <img height="400px" src="./readmeFiles/Home2.jpg" /> | <img height="400px" src="./readmeFiles/home3.jpg" /> |
 
 
 | Transaction | ChatWindow | Payment Screen | Invite Screen |
