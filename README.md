@@ -13,17 +13,11 @@ this design is inspired by [this dribble design](https://dribbble.com/shots/5312
 <img height="400px" src="./readmeFiles/animation.gif" />
 
 ### Home 
-<img height="400px" src="./readmeFiles/Home1.jpg" />
-
-<img height="400px" src="./readmeFiles/Home2.jpg" />
-
-<img height="400px" src="./readmeFiles/Home3.jpg" />
+| 1 | 2 | 3 |
+|---|---|---|
+| <img height="400px" src="./readmeFiles/Home1.jpg" /> | <img height="400px" src="./readmeFiles/Home2.jpg" /> | <img height="400px" src="./readmeFiles/Home3.jpg" /> |
 
 
-| Transaction | ChatWindow |
-|-------------|------------|
-| <img height="400px" src="./readmeFiles/transactions.jpg" /> | <img height="400px" src="./readmeFiles/chatwindow.jpg" /> |
-
-| Payment Screen | Invite Screen |
-|----------------|---------------|
-| <img height="400px" src="./readmeFiles/paymentScreen.jpg" /> | <img height="400px" src="./readmeFiles/invite.jpg" /> |
+| Transaction | ChatWindow | Payment Screen | Invite Screen |
+|-------------|------------|----------------|---------------|
+| <img height="400px" src="./readmeFiles/transactions.jpg" /> | <img height="400px" src="./readmeFiles/chatwindow.jpg" /> | <img height="400px" src="./readmeFiles/paymentScreen.jpg" /> | <img height="400px" src="./readmeFiles/invite.jpg" /> |
